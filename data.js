@@ -22,3 +22,6 @@ montereymarket = new Place("Monterey Market", 0.6, 3.4, 2.0, 1.0, 1.3, 0, 1.2, 1
 meatmarket = new Place("Meat Market", 1.7, 3.7, 2.0, 2.0, 1.4, 1.2, 0, 1.5, 2.6);
 postoffice = new Place("Post Office", 1.4, 5.0, 3.5, 0.9, 0.4, 1.6, 1.5, 0, 1.3);
 cvs = new Place("CVS Pharmacy", 0.8, 6.8, 5.6, 0.5, 0.6, 2.9, 2.6, 1.3, 0);
+
+places = [home, costco, target, safeway, traderjoes, montereymarket, meatmarket, postoffice, cvs];
+
