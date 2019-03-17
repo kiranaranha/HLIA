@@ -26,7 +26,7 @@ cvs = new Place("CVS Pharmacy", 0.8, 6.8, 5.6, 0.5, 0.6, 2.9, 2.6, 1.3, 0);
 var places = [home, costco, target, safeway, traderjoes, montereymarket, meatmarket, postoffice, cvs];
 */
 
-names = ["Home", "Costco", "Target", "Safeway", "Trader Joe's", "Monterey Market", "Meat Market", "Postoffice", "CVS Pharmacy"];
+names = ["Home", "Costco", "Target", "Safeway", "Trader Joe's", "Monterey Market", "Meat Market", "Post Office", "CVS Pharmacy"];
 
 distances = [[0, 3.5, 2.4, 0.7, 1.0, 0.6, 1.7, 1.4, 0.8],
             [3.5, 0, 2.1, 4.0, 4.7, 3.4, 3.7, 5.0, 6.8],
