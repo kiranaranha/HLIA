@@ -60,30 +60,29 @@ function dist(array) {
     var i;
 
     totDist = 0.0;
-    for (i=0; i < array.length-1; i++ ) {
-        totDist += distances[i][i+1];
+    for (i = 0; i < array.length - 1; i++) {
+        totDist += distances[i][i + 1];
     }
 
     // add distance from home to first place
-    totDist += distances[0][0];
+    totDist += distances[0][array[0]];
 
     // add distance from home to last place
-    totDist += distances[0][array.length-1];
+    totDist += distances[0][array[array.length - 1]];
 
     return totDist;
 }
 
 function print_route(array) {
-    var route_list = "";
+    var route_list = "Home, ";
 
     for (i=0; i < array.length; i++) {
-        route_list += names[array[i]];
-        if (i < array.length-1) {
-                route_list += ", ";
-        }
+        route_list += names[array[i]] + ", ";
     }
 
-    console.log(route_list);
+    route_list += "Home";
+
+    document.getElementById("optimal").innerHTML += route_list;
 }
 
 function optimize() {
@@ -97,7 +96,7 @@ function optimize() {
         return;
     }
 
-    console.log("Chosem places: ");
+    console.log("Chosen places: ");
     print_route(route);
 
     while (!done) {
@@ -107,13 +106,11 @@ function optimize() {
             opt_route = route;
             opt_dist = d;
         }
-        // console.log(route);
     }
 
     // print optimal route
-    console.log("Optimal route:");
+    document.getElementById("optimal").innerHTML = "<br> Optimal Route: <br>";
     print_route(opt_route);
-    console.log("Optimal Distance: " + opt_dist + " miles");
+    document.getElementById("optimal").innerHTML += "<br><br>Optimal Distance: <br>" + Math.round(opt_dist * 10 ) / 10 + " miles";
 
-    return;
 }
