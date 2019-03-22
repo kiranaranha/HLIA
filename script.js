@@ -8,6 +8,8 @@ function start() {
     }
     selectPlaces += "<br><button class='button' onclick='input()'>Optimize!</button>";
     document.getElementById("myPlacesDiv").innerHTML = selectPlaces
+    document.getElementById("start").innerHTML = "";
+    document.getElementById("reset").innerHTML = ""
 }
 
 var chosenPlaces = [];
@@ -15,7 +17,7 @@ var chosenPlaces = [];
 function input(){
     // Choose places
     chosenPlaces = [];
-    var finalList = "<b>You are going to:</b> <br>";
+    var finalList = "<br><b>You are going to:</b> <br>";
     for(var i = 1;  i <= names.length - 1; i++){
         if(document.getElementById("checkbox" + i).checked){
             chosenPlaces.push(i);
@@ -113,4 +115,6 @@ function optimize() {
         document.getElementById("myPlacesDiv").innerHTML = '';
         document.getElementById("optimal").innerHTML = "<br> You did not choose any places to visit!";
     }
+
+    document.getElementById("reset").innerHTML = "<br><button class='button' onclick='start()'>Reset!</button>";
 }
