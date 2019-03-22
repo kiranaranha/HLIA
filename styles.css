@@ -1,19 +1,15 @@
 body {
-    background-color: #fffcd3;
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
+    background-color: rgba(111, 188, 237, 0.35);
     padding: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 .button {
-    background-color: #39c5d4;
+    background-color: #000000;
     border: none;
-    color: #0103b4;
-    padding: 15px 32px;
+    color: #fcfaff;
     text-align: center;
-    text-decoration: blue;
+    text-decoration: #0000ff;
     display: inline-block;
     font-size: 20px;
 }

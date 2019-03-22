@@ -1,20 +1,19 @@
 
 function start() {
-    document.getElementById("myPlacesDiv").innerHTML = "hello";
-    var selectPlaces = "Select places: <br>";
+    document.getElementById("optimal").innerHTML = "";
+    var selectPlaces = "<br><b>Select places:</b> <br>";
     for(var i = 1;  i <= names.length - 1; i++){
         selectPlaces += "<input type='checkbox' id='checkbox" + i +"'>" + names[i] + "<br>";
     }
-    selectPlaces += "<button class='button' onclick='input()'>Optimize!</button>";
+    selectPlaces += "<br><button class='button' onclick='input()'>Optimize!</button>";
     document.getElementById("myPlacesDiv").innerHTML = selectPlaces
 }
-
 
 var chosenPlaces = [];
 
 function input(){
     chosenPlaces = [];
-    var finalList = "You are going to: <br>";
+    var finalList = "<b>You are going to:</b> <br>";
     for(var i = 1;  i <= names.length - 1; i++){
         if(document.getElementById("checkbox" + i).checked){
             chosenPlaces.push(i);
@@ -91,12 +90,7 @@ function optimize() {
     var opt_dist  = dist(route);
     var done = false;
 
-    if (route.length < 1) {
-        console.log("You did not choose any places to visit");
-        return;
-    }
-
-    console.log("Chosen places: ");
+    //console.log("Chosen places: ");
     print_route(route);
 
     while (!done) {
@@ -109,8 +103,12 @@ function optimize() {
     }
 
     // print optimal route
-    document.getElementById("optimal").innerHTML = "<br> Optimal Route: <br>";
+    document.getElementById("optimal").innerHTML = "<br> <b>Optimal Route:</b> <br>";
     print_route(opt_route);
-    document.getElementById("optimal").innerHTML += "<br><br>Optimal Distance: <br>" + Math.round(opt_dist * 10 ) / 10 + " miles";
+    document.getElementById("optimal").innerHTML += "<br><br><b>Optimal Distance:</b> <br>" + Math.round(opt_dist * 10 ) / 10 + " miles";
 
+    if (route.length < 1) {
+        document.getElementById("myPlacesDiv").innerHTML = '';
+        document.getElementById("optimal").innerHTML = "<br> You did not choose any places to visit!";
+    }
 }
