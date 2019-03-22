@@ -1,5 +1,6 @@
 
 function start() {
+    // Start button
     document.getElementById("optimal").innerHTML = "";
     var selectPlaces = "<br><b>Select places:</b> <br>";
     for(var i = 1;  i <= names.length - 1; i++){
@@ -12,6 +13,7 @@ function start() {
 var chosenPlaces = [];
 
 function input(){
+    // Choose places
     chosenPlaces = [];
     var finalList = "<b>You are going to:</b> <br>";
     for(var i = 1;  i <= names.length - 1; i++){
