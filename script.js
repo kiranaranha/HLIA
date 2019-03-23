@@ -29,16 +29,16 @@ function input(){
     optimize();
 }
 
-function nextPermutation(array) {
+function nextRoute(array) {
 
-    // Find non-increasing suffix
+    // Find first non-increasing suffix
     var i = array.length - 1;
     while (i > 0 && array[i - 1] >= array[i])
         i--;
     if (i <= 0)
         return true;
 
-    // Find successor to pivot
+    // Find successor to the pivot
     var j = array.length - 1;
     while (array[j] <= array[i - 1])
         j--;
@@ -46,7 +46,7 @@ function nextPermutation(array) {
     array[i - 1] = array[j];
     array[j] = temp;
 
-    // Reverse suffix
+    // Reverse the suffix
     j = array.length - 1;
     while (i < j) {
         temp = array[i];
@@ -98,7 +98,7 @@ function optimize() {
     print_route(route);
 
     while (!done) {
-        done = nextPermutation(route);
+        done = nextRoute(route);
         d = dist(route);
         if (d < opt_dist) {
             opt_route = route;
