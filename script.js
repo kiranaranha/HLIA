@@ -3,8 +3,8 @@ function start() {
     // Start button
     document.getElementById("optimal").innerHTML = "";
     var selectPlaces = "<br><b>Select places:</b> <br>";
-    for(var i = 1;  i <= names.length - 1; i++){
-        selectPlaces += "<input type='checkbox' id='checkbox" + i +"'>" + names[i] + "<br>";
+    for(var i = 1;  i <= data.names.length - 1; i++){
+        selectPlaces += "<input type='checkbox' id='checkbox" + i +"'>" + data.names[i] + "<br>";
     }
     selectPlaces += "<br><button class='button' onclick='input()'>Optimize!</button>";
     document.getElementById("myPlacesDiv").innerHTML = selectPlaces
@@ -18,10 +18,10 @@ function input(){
     // Choose places
     chosenPlaces = [];
     var finalList = "<br><b>You are going to:</b> <br>";
-    for(var i = 1;  i <= names.length - 1; i++){
+    for(var i = 1;  i <= data.names.length - 1; i++){
         if(document.getElementById("checkbox" + i).checked){
             chosenPlaces.push(i);
-            finalList += names[i] + "<br>";
+            finalList += data.names[i] + "<br>";
         }
     }
 
@@ -64,14 +64,14 @@ function dist(array) {
 
     totDist = 0.0;
     for (i = 0; i < array.length - 1; i++) {
-        totDist += distances[i][i + 1];
+        totDist += data.distances[i][i + 1];
     }
 
     // add distance from home to first place
-    totDist += distances[0][array[0]];
+    totDist += data.distances[0][array[0]];
 
     // add distance from home to last place
-    totDist += distances[0][array[array.length - 1]];
+    totDist += data.distances[0][array[array.length - 1]];
 
     return totDist;
 }
@@ -80,7 +80,7 @@ function print_route(array) {
     var route_list = "Home, ";
 
     for (i=0; i < array.length; i++) {
-        route_list += names[array[i]] + ", ";
+        route_list += data.names[array[i]] + ", ";
     }
 
     route_list += "Home";
