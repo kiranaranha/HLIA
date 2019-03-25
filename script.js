@@ -7,7 +7,7 @@ function start() {
         selectPlaces += "<input type='checkbox' id='checkbox" + i +"'>" + data.names[i] + "<br>";
     }
     selectPlaces += "<br><button class='button' onclick='input()'>Optimize!</button>";
-    document.getElementById("myPlacesDiv").innerHTML = selectPlaces
+    document.getElementById("myPlacesDiv").innerHTML = selectPlaces;
     document.getElementById("start").innerHTML = "";
     document.getElementById("reset").innerHTML = ""
 }
