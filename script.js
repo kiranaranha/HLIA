@@ -9,7 +9,7 @@ function start() {
     selectPlaces += "<br><button class='button' onclick='input()'>Optimize!</button>";
     document.getElementById("myPlacesDiv").innerHTML = selectPlaces;
     document.getElementById("start").innerHTML = "";
-    document.getElementById("reset").innerHTML = ""
+    document.getElementById("reset").innerHTML = "";
 }
 
 var chosenPlaces = [];
@@ -33,15 +33,17 @@ function nextRoute(array) {
 
     // Find first non-increasing suffix
     var i = array.length - 1;
-    while (i > 0 && array[i - 1] >= array[i])
+    while (i > 0 && array[i - 1] >= array[i]) {
         i--;
-    if (i <= 0)
+    }
+    if (i <= 0) {
         return true;
-
+    }
     // Find successor to the pivot
     var j = array.length - 1;
-    while (array[j] <= array[i - 1])
+    while (array[j] <= array[i - 1]) {
         j--;
+    }
     var temp = array[i - 1];
     array[i - 1] = array[j];
     array[j] = temp;
